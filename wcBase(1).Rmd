@@ -6,7 +6,6 @@ output:
   pdf_document: default
   word_document: default
   html_document: default
-always_allow_html: true
 subtitle: Summary Report For the `r params$region` Region
 params:
   region:
@@ -25,14 +24,29 @@ params:
     - East South Central
 ---
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE }
-knitr::read_chunk("code/setup.R")
-```
+```{r setup, include=FALSE}
+# define knitr options
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
 
-```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
-```
+# set any missing NAs in table to blank
+options(knitr.kable.NA='')
 
-```{r loadData}
+# load R packages
+library(fivethirtyeight)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(ggthemes)
+
+# load steak_survey dataset
+data("weather_check", package="fivethirtyeight")
+
+# create subset, no missing NAs
+# pick a specific region
+sdat <- weather_check %>%
+  filter(region=="Mountain")
 ```
 
 ![](images/morata1.jpg){width="70"} ![](images/morata1.jpg){width="70"} ![](images/morata1.jpg){width="70"} ![](images/morata1.jpg){width="70"}

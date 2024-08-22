@@ -3,9 +3,10 @@ title: "Weather Information Preferences in the United States"
 author: 'Author: Frank Ziegengeist'
 date: "`r format(Sys.Date(), '%A, %B %d, %Y')`"
 output:
-  pdf_document: default
-  word_document: default
-  html_document: default
+  beamer_presentation: default
+  ioslides_presentation:
+    logo: images/morata1.jpg
+  slidy_presentation: default
 always_allow_html: true
 subtitle: Summary Report For the `r params$region` Region
 params:
@@ -34,10 +35,6 @@ knitr::read_chunk("code/setup.R")
 
 ```{r loadData}
 ```
-
-![](images/morata1.jpg){width="70"} ![](images/morata1.jpg){width="70"} ![](images/morata1.jpg){width="70"} ![](images/morata1.jpg){width="70"}
-
-![](images/morata1.jpg){width="270"}
 
 ```{r child="text/backgroundSection.Rmd"}
 ```
