@@ -3,9 +3,9 @@ title: "Weather Information Preferences in the United States"
 author: 'Author: Frank Ziegengeist'
 date: "`r format(Sys.Date(), '%A, %B %d, %Y')`"
 output:
-  pdf_document: default
-  word_document: default
   html_document: default
+  word_document: default
+  pdf_document: default
 always_allow_html: true
 subtitle: Summary Report For the `r params$region` Region
 params:
